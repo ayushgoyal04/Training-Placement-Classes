@@ -11,6 +11,16 @@ void PrintSqMatrix(int n, int mat[100][100]){
     }
 }
 
+void PrintRecMatrix(int n,int m, int mat[100][100]){
+    cout<<"printing the matrix"<<endl;
+    for(int row=0;row<n;row++){
+        for(int col=0;col<m;col++){
+            cout<<mat[row][col]<<" ";
+        }
+        cout<<endl;
+    }
+}
+
 void rowSumSq(int n, int mat[100][100]){
     cout<<"Row sum"<<endl;
     int ans = 0;
@@ -87,17 +97,29 @@ void DiagonalSecondary(int n, int mat[100][100]){
     } 
 }
 
+void borderElements(int n, int m, int mat[100][100]){
+    for(int row=0; row<n; row++){
+        for(int col=0;col<m; col++){
+            if(row==0 || col==0 || row==n-1 || col==m-1){
+                cout<<mat[row][col]<<" ";
+            }
+            else
+            cout<<"  ";
+        }cout<<endl;
+    }
+}
+
 
 int main(){
     // initializing a square matrix (Accepting the matrix)
-    int n;
-    cin>>n;
-    int mat[100][100];        
-    for(int row=0;row<n;row++){
-        for(int col=0;col<n;col++){
-            cin>>mat[row][col];
-        }
-    } 
+    // int n;
+    // cin>>n;
+    // int mat[100][100];        
+    // for(int row=0;row<n;row++){
+    //     for(int col=0;col<n;col++){
+    //         cin>>mat[row][col];
+    //     }
+    // } 
 
     // initializing a rectangular matrix (Accepting the matrix)
     // int n,m;
@@ -108,12 +130,5 @@ int main(){
     //         cin>>mat[rows][col];
     //     }
     // } 
-    
-    PrintSqMatrix(n,mat);
-    
-       
-    
     return 0;
-
-
 }
