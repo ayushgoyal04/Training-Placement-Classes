@@ -145,6 +145,28 @@ void reverseSpiral(int n, int m, int mat[][100]){
    
 }
 
+void Spiral(int n,int m, int mat[][100]){
+    int minr=0,minc=0,maxr=n-1,maxc=n-1;
+    int max = n*n;
+    while(max--){
+        for(int col=minr;col<=maxc;col++)     cout<<mat[minr][col]<<" ";
+            minr++;
+        
+        for(int row=minr; row<=maxr; row++)
+        cout<<mat[row][maxc]<<" ";
+            maxc--;
+        
+        for(int col = maxr-1;col>=minc;col--)
+        cout<<mat[maxr][col]<<" ";
+            maxr--;
+        
+        for(int row=maxr; row>=minr; row--)
+        cout<<mat[row][minc]<<" ";
+            minc++;
+        
+    }
+}
+
 int main(){
     // initializing a square matrix (Accepting the matrix)
     // int n;
@@ -154,7 +176,9 @@ int main(){
     //     for(int col=0;col<n;col++){
     //         cin>>mat[row][col];
     //     }
-    // } 
+    // }
+    // PrintSqMatrix(n,mat);
+    // cout<<endl; 
 
     // initializing a rectangular matrix (Accepting the matrix)
     int n,m;
@@ -169,6 +193,6 @@ PrintRecMatrix(n,m,mat);
 cout<<endl;
 
 
-    
+    Spiral(n,m, mat);
     return 0;
 }
