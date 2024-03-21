@@ -3,9 +3,10 @@ using namespace std;
 map<int,int> mp;
 
 bool cmp(int a, int b){
-    if(mp[a]==mp[b]) return a<b;
-    else if(mp[a]>mp[b]) return true;
-    else return false;
+    // if(mp[a]==mp[b]) return a>b;
+    // return mp[a]<mp[b];
+    return mp[a]!=mp[b]?mp[a]<mp[b]:a>b;
+
 }
 
 int main(){
